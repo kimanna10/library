@@ -1,9 +1,9 @@
 # library
 lab6
 
-Library system
+# Library system
 Entities: Library, Client, Book, Author, Genre
 
-Relationship 
+# Relationship 
 Many to Many: Book & Genre, Author & Book
 One to Many: Book & Library, Client Library
