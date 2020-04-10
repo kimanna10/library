@@ -5,5 +5,5 @@ lab6
 Entities: Library, Client, Book, Author, Genre
 
 # Relationship 
-Many to Many: Book & Genre, Author & Book
-One to Many: Book & Library, Client Library
+Many to Many: { Book & Genre, Author & Book }
+One to Many: { Book & Library, Client Library }
