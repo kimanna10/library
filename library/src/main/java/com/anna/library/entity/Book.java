@@ -14,8 +14,8 @@ public class Book {
     private int quantity;
     private boolean isAvailable;
 
-    @OneToMany(mappedBy = "book", fetch = FetchType.LAZY)
-    private List<Library> clients;
+    @ManyToMany(mappedBy = "borrowedBooks", fetch = FetchType.LAZY)
+    private List<Client> clientsList;
 
     @ManyToMany(mappedBy = "bookList", fetch = FetchType.LAZY)
     private List<Author> authorList;
@@ -72,23 +72,39 @@ public class Book {
         isAvailable = available;
     }
 
-    public List<Library> getClients() {
-        return clients;
+
+    public List<Author> getAuthorList() {
+        return authorList;
     }
 
-    public void setClients(List<Library> clients) {
-        this.clients = clients;
+    public void setAuthorList(List<Author> authorList) {
+        this.authorList = authorList;
     }
 
-
-    @Override
-    public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", quantity=" + quantity +
-                ", isAvailable=" + isAvailable +
-                '}';
+    public List<Genre> getGenreList() {
+        return genreList;
     }
+
+    public void setGenreList(List<Genre> genreList) {
+        this.genreList = genreList;
+    }
+
+    public List<Client> getClientsList() {
+        return clientsList;
+    }
+
+    public void setClientsList(List<Client> clientsList) {
+        this.clientsList = clientsList;
+    }
+
+//    @Override
+//    public String toString() {
+//        return "Book{" +
+//                "id=" + id +
+//                ", title='" + title + '\'' +
+//                ", description='" + description + '\'' +
+//                ", quantity=" + quantity +
+//                ", isAvailable=" + isAvailable +
+//                '}';
+//    }
 }

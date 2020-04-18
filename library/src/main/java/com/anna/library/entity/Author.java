@@ -24,13 +24,7 @@ public class Author {
         this.name = name;
 
     }
-    public List<Book> getBookList() {
-        return bookList;
-    }
 
-    public void setBookList(List<Book> bookList) {
-        this.bookList = bookList;
-    }
 
     public int getId() {
         return id;
@@ -48,12 +42,12 @@ public class Author {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "Author{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", bookList=" + bookList +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Author{" +
+//                "id=" + id +
+//                ", name='" + name + '\'' +
+//                ", bookList=" + bookList +
+//                '}';
+//    }
 }

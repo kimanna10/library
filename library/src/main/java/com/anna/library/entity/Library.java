@@ -1,28 +1,23 @@
 package com.anna.library.entity;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
+import java.util.List;
 
 @Entity
+@Table(name = "library")
 public class Library {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+
     @Column(name = "client_id")
     private int client_id;
 
     @Column(name = "book_id")
     private int book_id;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "client_id", insertable = false, updatable = false)
-    private Client client;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "book_id", insertable = false, updatable = false)
-    private Book book;
 
     private Date issueDate;
     private Date returnDate;
@@ -43,14 +38,6 @@ public class Library {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public Client getClient() {
-        return client;
-    }
-
-    public void setClient(Client client) {
-        this.client = client;
     }
 
     public int getClient_id() {
@@ -85,14 +72,14 @@ public class Library {
         this.returnDate = returnDate;
     }
 
-    @Override
-    public String toString() {
-        return "Library{" +
-                "id=" + id +
-                ", client=" + client +
-                ", book=" + book +
-                ", issueDate=" + issueDate +
-                ", returnDate=" + returnDate +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Library{" +
+//                "id=" + id +
+//                ", client=" + client +
+//                ", book=" + book +
+//                ", issueDate=" + issueDate +
+//                ", returnDate=" + returnDate +
+//                '}';
+//    }
 }

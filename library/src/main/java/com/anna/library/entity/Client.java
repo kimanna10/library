@@ -11,8 +11,12 @@ public class Client {
     private int id;
     private String name;
 
-    @OneToMany(mappedBy = "client", fetch = FetchType.LAZY)
-    private List<Library> borrowedBook;
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "library",
+            joinColumns = {@JoinColumn(name = "client_id", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "book_id", referencedColumnName = "id")}
+    )
+    private List<Book> borrowedBooks;
 
     public int getId() {
         return id;
@@ -30,13 +34,6 @@ public class Client {
         this.name = name;
     }
 
-    public List<Library> getBorrowedBook() {
-        return borrowedBook;
-    }
-
-    public void setBorrowedBook(List<Library> borrowedBook) {
-        this.borrowedBook = borrowedBook;
-    }
 
     @Override
     public String toString() {

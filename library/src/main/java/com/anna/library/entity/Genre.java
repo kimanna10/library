@@ -39,13 +39,7 @@ public class Genre {
         this.title = title;
     }
 
-    public List<Book> getBookList() {
-        return bookList;
-    }
 
-    public void setBookList(List<Book> bookList) {
-        this.bookList = bookList;
-    }
 
     @Override
     public String toString() {
